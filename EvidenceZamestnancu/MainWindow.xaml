@@ -1,0 +1,28 @@
+﻿<Window x:Class="EvidenceZamestnancu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EvidenceZamestnancu"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <ListBox HorizontalAlignment="Left" Height="414" VerticalAlignment="Center" Width="301" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,0,0,0" x:Name="Seznam">
+            <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock  Text="{Binding ID}"/>
+                            <TextBlock  Text="{Binding Jmeno}"/>
+                            <TextBlock  Text="{Binding Prijmeni}"/>
+                            <TextBlock  Text="{Binding DatumN, StringFormat=dd.MM.yyyy}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Content="Vytvořit" HorizontalAlignment="Left" Margin="373,16,0,0" VerticalAlignment="Top" Height="43" Width="100" Click="Button_Click"/>
+        <Button Content="Zobrazit" HorizontalAlignment="Left" Margin="574,17,0,0" VerticalAlignment="Top" Height="42" Width="100"/>
+        <Button Content="Smazat" HorizontalAlignment="Left" Margin="373,107,0,0" VerticalAlignment="Top" Height="43" Width="100"/>
+        <Button Content="Upravit" HorizontalAlignment="Left" Margin="574,107,0,0" VerticalAlignment="Top" Height="43" Width="100"/>
+
+    </Grid>
+</Window>
